@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Which Sanrio character are you?</title>
+<style>
+body {
+background-color: lightpink;
+font-family: monaco;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+background-image: url("bath.png");
+background-position: center;
+background-repeat: no-repeat;
+padding: 20px;
+height: 250px;
+}
+
+label {
+width: 150px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+
+input:checked + label img {
+  border:2px solid #00f;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<h1>Which Sanrio character are you?</h1>
+<div id="header"></div>
+
+<form  id="form1">
+<p><b>What's your favorite activity to do?</b></p>
+<label><input type="radio" name="activity" id="eat" value="1" />Eat, of course!</label>
+<label><input type="radio" name="activity" id="pals" value="2" />Hang with my pals</label>
+<label><input type="radio" name="activity" id="games" value="3" />Play video games</label>
+<label><input type="radio" name="activity" id="makeup" value="4" />Try new makeup looks</label>
+
+<p><b>What's your favorite color? </b></p>
+<label><input type="radio" name="color" id="yellow" value="1" />Yellow</label>
+<label><input type="radio" name="color" id="black" value="3" />Black</label>
+<label><input type="radio" name="color" id="red" value="4" />Red</label>
+<label><input type="radio" name="color" id="blue" value="2" />Blue</label>
+
+<p><b>What's your favorite sweet?</b></p>
+<label><input type="radio" name="food" id="cake" value="2" />Cake</label>
+<label><input type="radio" name="food" id="pudding" value="1" />Pudding</label>
+<label><input type="radio" name="food" id="lollipop" value="4" />Lollipops</label>
+<label><input type="radio" name="food" id="country" value="3" />Brownies</label>
+
+<p><b>What would you say your demeanor is like?</b></p>
+<label><input type="radio" name="demeanor" id="social" value="3" />Anti-social</label>
+<label><input type="radio" name="demeanor" id="friendly" value="4" />Friendly</label>
+<label><input type="radio" name="demeanor" id="calm" value="1" />Calm</label>
+<label><input type="radio" name="demeanor" id="polite" value="2" />Polite</label>
+
+<p><b>Lastly: Who would you want to be friends with?</b></p>
+
+<input name="friends" value="4" type="radio" id="one">
+    <label for="one">
+      <img src="kitty.png">
+    </label>
+
+ 
+    <input name="friends" value="2" type="radio" id="two">
+    <label for="two">
+      <img src="pek.png">
+    </label>
+  
+    <input name="friends" value="3" type="radio" id="three">
+    <label for="three">
+      <img src="kuro.png">
+    </label>
+
+    <input name="friends" value="1"  type="radio" id="four">
+    <label for="four">
+      <img src="roll.png">
+    </label>
+
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   
+	   activity = parseInt(document.querySelector('input[name = "activity"]:checked').value);  
+	  
+	  color = parseInt(document.querySelector('input[name = "color"]:checked').value);
+	   
+	  food = parseInt(document.querySelector('input[name = "food"]:checked').value);
+
+	  demeanor = parseInt(document.querySelector('input[name = "demeanor"]:checked').value);
+
+	  friends = parseInt(document.querySelector('input[name = "friends"]:checked').value);
+	   
+	  total= activity + color + food + demeanor;
+	   
+	  
+	   //document.getElementById("answer").innerHTML = total;	   
+
+	   if(total < 6) {
+document.getElementById("answer2").innerHTML = "You got Pom Pom Purin.";
+}
+
+   if(total >=6 && total < 11) {
+document.getElementById("answer2").innerHTML = "You got Tuxedo Sam";
+
+}
+	
+	if(total >=11 & total < 15) {
+document.getElementById("answer2").innerHTML = "You got Bad Badtz Maru";
+}   
+
+if(total >=15) {
+document.getElementById("answer2").innerHTML = "You got My Melody";
+}   
+	   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
+	
+
