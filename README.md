@@ -1,2 +1,2 @@
 # CharacterQuiz
-test repository
+Simple quiz about determining which Sanrio character you may be.
